@@ -117,25 +117,25 @@
 			<div class="flex items-center justify-between">
 				<h2 class="font-bold text-[26px] leading-[39px]">
 					Latest For You <br />
-					in Entertainment
+					in Kegiatan
 				</h2>
 				<a href="categoryPage.html" class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">Explore All</a>
 			</div>
 			<div class="flex items-center justify-between h-fit">
 				<div class="featured-news-card relative w-full h-[424px] flex flex-1 rounded-[20px] overflow-hidden">
-					<img src="assets/images/thumbnails/th-featured-1.png" class="absolute object-cover w-full h-full thumbnail" alt="icon" />
+					<img src="{{Storage::url($kegiatan_featured_posts->thumbnail)}}" class="absolute object-cover w-full h-full thumbnail" alt="icon" />
 					<div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"></div>
 					<div class="card-detail w-full flex items-end p-[30px] relative z-20">
 						<div class="flex flex-col gap-[10px]">
 							<p class="text-white">Featured</p>
-							<a href="details.html" class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300">Rela Tampil Menarik Depan Wanita, Pria Ini Jadi Bahan Bicaraan</a>
-							<p class="text-white">12 Jun, 2024</p>
+							<a href="details.html" class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300">{{ substr($kegiatan_featured_posts->judul, 0,60)}}{{ strlen($kegiatan_featured_posts->judul)>60 ?'...':''}}</a>
+							<p class="text-white">{{ $kegiatan_featured_posts->created_at->format('M d, Y')}}</p>
 						</div>
 					</div>
 				</div>
 				<div class="h-[424px] w-fit px-5 overflow-y-scroll overflow-x-hidden relative custom-scrollbar">
 					<div class="w-[455px] flex flex-col gap-5 shrink-0">
-						@forelse ($entertainment_posts as $post )
+						@forelse ($kegiatan_posts as $post )
 						<a href="{{route('front.details', $post->slug)}}" class="card py-[2px]">
 							<div class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
 								<div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
@@ -165,7 +165,7 @@
 			</div>
 			<div class="flex items-center justify-between h-fit">
 				<div class="featured-news-card relative w-full h-[424px] flex flex-1 rounded-[20px] overflow-hidden">
-					<img src="assets/images/thumbnails/th-featured-1.png" class="absolute object-cover w-full h-full thumbnail" alt="icon" />
+					<img src="{{Storage::url($post->thumbnail)}}" class="absolute object-cover w-full h-full thumbnail" alt="icon" />
 					<div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"></div>
 					<div class="card-detail w-full flex items-end p-[30px] relative z-20">
 						<div class="flex flex-col gap-[10px]">
@@ -180,7 +180,7 @@
 						<a href="details.html" class="card py-[2px]">
 							<div class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
 								<div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-									<img src="assets/images/thumbnails/th-building.png" class="object-cover w-full h-full" alt="thumbnail" />
+									<img src="{{Storage::url($post->thumbnail)}}" class="object-cover w-full h-full" alt="thumbnail" />
 								</div>
 								<div class="flex flex-col justify-center-center gap-[6px]">
 									<h3 class="font-bold text-lg leading-[27px]">Angga telah launching office space special edition</h3>
