@@ -35,6 +35,9 @@ class AuthorResource extends Resource
                 Forms\Components\FileUpload::make('avatar')
                     ->required()
                     ->image(),
+                    Forms\Components\TextInput::make('jabatan')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -49,6 +52,8 @@ class AuthorResource extends Resource
                 Tables\Columns\TextColumn::make('occupation')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('avatar'),
+                Tables\Columns\TextColumn::make('jabatan')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()

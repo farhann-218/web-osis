@@ -16,6 +16,7 @@ class Author extends Model
         'username',
         'slug',
         'occupation',
+        'jabatan',
         'avatar'];
 
     public function setNameAttribute($value)

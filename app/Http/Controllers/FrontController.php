@@ -36,7 +36,7 @@ class FrontController extends Controller
         $authors = Author::all();
 
         $kegiatan_posts = Post::whereHas('category', function($query){
-            $query->where('judul', 'Kegiatan');
+            $query->where('judul', 'berita');
         })
         ->where('is_featured', 'not_featured')
         ->latest()
@@ -44,7 +44,7 @@ class FrontController extends Controller
         ->get();
 
         $kegiatan_featured_posts = Post::whereHas('category', function($query){
-            $query->where('judul', 'Kegiatan');
+            $query->where('judul', 'berita');
         })
         ->where('is_featured', 'featured')
         ->inRandomOrder()

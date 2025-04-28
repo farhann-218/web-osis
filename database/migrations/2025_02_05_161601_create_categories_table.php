@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('slug')->unique();
+            $table->string('deskripsi')->unique();
             $table->string('icon');
             $table->softDeletes();
             $table->timestamps();

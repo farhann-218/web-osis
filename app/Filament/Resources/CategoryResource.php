@@ -32,6 +32,9 @@ class CategoryResource extends Resource
                 Forms\Components\FileUpload::make('icon')
                     ->required()
                     ->image(),
+                    Forms\Components\TextInput::make('deskripsi')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -44,6 +47,8 @@ class CategoryResource extends Resource
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('icon'),
+                Tables\Columns\TextColumn::make('deskripsi')
+                ->searchable(),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()

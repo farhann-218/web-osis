@@ -57,7 +57,7 @@
 		</article>
 		<div class="side-bar flex flex-col w-[300px] shrink-0 gap-10">
 			<div class="flex flex-col w-full gap-3 ads">
-				<a href="{{ $square_advertisements->link }}">
+				<a href="{{ $square_advertisements->url}}">
 					<img src="{{ Storage::url($square_advertisements->thumbnail) }}" class="object-contain w-full h-full" alt="ads" />
 				</a>
 				<p class="font-medium text-sm leading-[21px] text-[#A3A6AE] flex gap-1">

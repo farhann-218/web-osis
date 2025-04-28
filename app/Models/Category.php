@@ -15,6 +15,7 @@ class Category extends Model
     protected $fillable = [
         'judul',
         'slug',
+        'deskripsi',
         'icon'
     ];
 
@@ -22,6 +23,7 @@ class Category extends Model
     {
         $this->attributes['judul'] = $value;
         $this->attributes['slug'] = Str::slug($value);
+        $this->attributes['deskripsi'] = Str::deskripsi($value);
     }
 
     public function posts(): HasMany
